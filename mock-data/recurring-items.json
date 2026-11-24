@@ -1,0 +1,12 @@
+[
+  {"persona_code":"student","label":"Tiền sinh hoạt","kind":"income","amount_vnd":5000000,"day_of_month":5,"category":"allowance","start_date":"2026-09-01","active":true},
+  {"persona_code":"student","label":"Tiền trọ","kind":"expense","amount_vnd":1800000,"day_of_month":1,"category":"rent","start_date":"2026-09-01","active":true},
+  {"persona_code":"student","label":"Điện nước","kind":"expense","amount_vnd":300000,"day_of_month":15,"category":"utilities","start_date":"2026-09-01","active":true},
+  {"persona_code":"worker","label":"Lương tháng","kind":"income","amount_vnd":12000000,"day_of_month":28,"category":"salary","start_date":"2026-09-01","active":true},
+  {"persona_code":"worker","label":"Tiền nhà","kind":"expense","amount_vnd":3800000,"day_of_month":5,"category":"rent","start_date":"2026-09-01","active":true},
+  {"persona_code":"worker","label":"Internet và tiện ích","kind":"expense","amount_vnd":650000,"day_of_month":20,"category":"utilities","start_date":"2026-09-01","active":true},
+  {"persona_code":"at_risk","label":"Lương tháng","kind":"income","amount_vnd":9000000,"day_of_month":25,"category":"salary","start_date":"2026-09-01","active":true},
+  {"persona_code":"at_risk","label":"Tiền trọ","kind":"expense","amount_vnd":3200000,"day_of_month":1,"category":"rent","start_date":"2026-09-01","active":true},
+  {"persona_code":"at_risk","label":"Trả góp","kind":"expense","amount_vnd":1100000,"day_of_month":15,"category":"installment","start_date":"2026-09-01","active":true},
+  {"persona_code":"at_risk","label":"Dịch vụ định kỳ","kind":"expense","amount_vnd":450000,"day_of_month":30,"category":"subscriptions","start_date":"2026-09-01","active":true}
+]

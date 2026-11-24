@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="vi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard (Desktop) — FinPilot AI</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#3525CD',
+        'on-primary': '#FFFFFF',
+        'primary-container': '#E2DFFF',
+        'on-primary-container': '#0F0069',
+        'secondary': '#0051D5',
+        'on-secondary': '#FFFFFF',
+        'secondary-container': '#DBE1FF',
+        'on-secondary-container': '#00174B',
+        'tertiary': '#7E3000',
+        'on-tertiary': '#FFFFFF',
+        'tertiary-container': '#FFDBCC',
+        'on-tertiary-container': '#351000',
+        'success': '#15803D',
+        'on-success': '#FFFFFF',
+        'success-container': '#DCFCE7',
+        'on-success-container': '#14532D',
+        'warning': '#B45309',
+        'on-warning': '#FFFFFF',
+        'warning-container': '#FEF3C7',
+        'on-warning-container': '#78350F',
+        'error': '#BA1A1A',
+        'on-error': '#FFFFFF',
+        'error-container': '#FFDAD6',
+        'on-error-container': '#93000A',
+        'background': '#FCF8FF',
+        'on-background': '#1B1B24',
+        'surface': '#FCF8FF',
+        'surface-dim': '#DCD8E5',
+        'surface-bright': '#FCF8FF',
+        'surface-container-lowest': '#FFFFFF',
+        'surface-container-low': '#F5F2FF',
+        'surface-container': '#F0ECF9',
+        'surface-container-high': '#EAE6F4',
+        'surface-container-highest': '#E4E1EE',
+        'on-surface': '#1B1B24',
+        'surface-variant': '#E3E0F4',
+        'on-surface-variant': '#464555',
+        'outline': '#777587',
+        'outline-variant': '#C7C4D8',
+        'inverse-surface': '#302F39',
+        'inverse-on-surface': '#F3EFFC',
+        'inverse-primary': '#C3C0FF',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '32px',
+        'page-margin': '16px',
+      },
+      fontFamily: {
+        'display': ['"Alata"', 'sans-serif'],
+        'headline': ['"Alata"', 'sans-serif'],
+        'title': ['"Instrument Sans"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'mono': ['"Red Hat Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '400' }],
+        'headline-lg': ['28px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '400' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '0px', fontWeight: '400' }],
+        'title-lg': ['18px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.3px', fontWeight: '600' }],
+        'mono-lg': ['18px', { lineHeight: '24px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'mono-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Red+Hat+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+  <div class="min-h-[1024px] flex flex-col lg:flex-row" data-stitch-vh="min-h-[1024px]===min-h-screen">
+    <!-- Desktop Left Sidebar -->
+    <aside class="hidden lg:flex lg:flex-col lg:w-64 lg:min-h-[1024px] shrink-0 bg-surface-container-lowest border-r border-outline-variant p-gutter-lg justify-between" data-stitch-vh="lg:min-h-[1024px]===lg:min-h-screen">
+      <div class="flex flex-col gap-gutter-lg">
+        <div class="flex items-center justify-between gap-gutter-sm">
+          <a href="../dashboard/Dashboard.html" class="flex items-center gap-gutter-sm">
+            <span class="w-9 h-9 rounded bg-primary text-on-primary inline-flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">explore</span>
+            </span>
+            <span data-design-text-token="title-lg" class="font-headline text-title-lg text-on-surface">FinPilot AI</span>
+          </a>
+        </div>
+
+        <span data-component-id="badge-status" data-component-type="badge" data-component-variant="status" role="status" class="inline-flex self-start items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container">
+          <span data-design-text-token="label-sm" class="font-label text-label-sm">Chế độ Demo</span>
+        </span>
+
+        <nav aria-label="Điều hướng chính" class="flex flex-col gap-gutter-xs">
+          <a href="../dashboard/Dashboard.html" aria-current="page" class="flex items-center gap-gutter-md min-h-[44px] px-gutter-md rounded bg-primary-container text-on-primary-container">
+            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">home</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Dashboard</span>
+          </a>
+          <a href="../transactions/Transactions.html" class="flex items-center gap-gutter-md min-h-[44px] px-gutter-md rounded text-on-surface-variant hover:bg-surface-container-low">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">receipt_long</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Transactions</span>
+          </a>
+          <a href="../assistant/Assistant.html" class="flex items-center gap-gutter-md min-h-[44px] px-gutter-md rounded text-on-surface-variant hover:bg-surface-container-low">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">auto_awesome</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">AI Assistant</span>
+          </a>
+          <a href="../simulator/Simulator.html" class="flex items-center gap-gutter-md min-h-[44px] px-gutter-md rounded text-on-surface-variant hover:bg-surface-container-low">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">calculate</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Simulator</span>
+          </a>
+          <a href="../settings/Settings.html" class="flex items-center gap-gutter-md min-h-[44px] px-gutter-md rounded text-on-surface-variant hover:bg-surface-container-low">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">settings</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Settings</span>
+          </a>
+        </nav>
+      </div>
+
+      <a href="../settings/Settings.html" class="flex items-center gap-gutter-md p-gutter-sm rounded-lg border border-outline-variant/60 hover:bg-surface-container-low">
+        <img src="https://lh3.googleusercontent.com/aida/ALJJyrDKL4qm0ZsfKSgTpH8hB0Xo7-dKp4NZ7lykYtKMNXAZbPozXmleQa-tv3F4KO5d-iyW00WgGAeuzjT-x7IR2olCPYN-LupN0CQJ303pBtXHb76dtuY5F7-C_1V5NQPoSosCOakiNguyGtfmhbdf799mZgSrcJXbps1s20MPYy4jT-mAaFNS01_uJ18lWKyVbxwz6GAmD4Ss04xvcDWrOwWb8BIU4lO2wH3fXV8U3-1xvTNNiwOn" alt="Ảnh đại diện Minh Anh" class="w-10 h-10 rounded-full object-cover shrink-0">
+        <div class="min-w-0">
+          <p data-design-text-token="label-lg" class="font-label text-label-lg text-on-surface">Minh Anh</p>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Sinh viên · Demo</p>
+        </div>
+      </a>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="flex-1 flex flex-col min-w-0 pb-24 lg:pb-gutter-xl">
+      <header class="sticky top-0 z-20 bg-surface border-b border-outline-variant/50 px-page-margin lg:px-gutter-xl h-16 flex items-center justify-between gap-gutter-sm">
+        <div class="flex items-center gap-gutter-sm">
+          <h1 data-design-text-token="headline-md" class="font-headline text-headline-md text-on-surface">Tổng quan dòng tiền</h1>
+        </div>
+        <div class="flex items-center gap-gutter-sm">
+          <a href="../settings/Settings.html" aria-label="Mở Cài đặt tài khoản" class="inline-flex items-center gap-gutter-sm p-1 rounded-full hover:bg-surface-container-low">
+            <img src="https://lh3.googleusercontent.com/aida/ALJJyrDKL4qm0ZsfKSgTpH8hB0Xo7-dKp4NZ7lykYtKMNXAZbPozXmleQa-tv3F4KO5d-iyW00WgGAeuzjT-x7IR2olCPYN-LupN0CQJ303pBtXHb76dtuY5F7-C_1V5NQPoSosCOakiNguyGtfmhbdf799mZgSrcJXbps1s20MPYy4jT-mAaFNS01_uJ18lWKyVbxwz6GAmD4Ss04xvcDWrOwWb8BIU4lO2wH3fXV8U3-1xvTNNiwOn" alt="Hồ sơ Minh Anh" class="w-9 h-9 rounded-full object-cover border border-outline-variant">
+          </a>
+        </div>
+      </header>
+
+      <main class="w-full max-w-6xl mx-auto px-page-margin lg:px-gutter-xl py-gutter-md lg:py-gutter-lg flex flex-col gap-gutter-lg">
+        <!-- Balance & AI Insight -->
+        <section aria-label="Số dư và phân tích AI" class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md items-stretch">
+          <article data-component-id="card-elevated" data-component-type="card" data-component-variant="elevated" class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant/70 rounded-lg p-gutter-lg shadow-sm flex flex-col justify-between gap-gutter-md">
+            <div class="flex items-start justify-between gap-gutter-sm">
+              <div>
+                <p data-design-text-token="label-md" class="font-label text-label-md text-on-surface-variant">Số dư ước tính hiện tại</p>
+                <p data-design-text-token="display-lg" class="font-display text-display-lg text-on-surface tabular-nums mt-1">4.850.000 ₫</p>
+              </div>
+              <span data-component-id="badge-success" data-component-type="badge" data-component-variant="success" role="status" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-success-container text-on-success-container shrink-0">
+                <span class="material-symbols-outlined text-[14px]" aria-hidden="true">check_circle</span>
+                <span data-design-text-token="label-sm" class="font-label text-label-sm">Trên ngưỡng an toàn</span>
+              </span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-gutter-sm pt-gutter-sm border-t border-outline-variant/40">
+              <div class="bg-surface-container-low rounded p-gutter-sm">
+                <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Thu nhập tháng 11</p>
+                <p data-design-text-token="mono-lg" class="font-mono text-mono-lg text-success tabular-nums mt-0.5">+7.500.000 ₫</p>
+              </div>
+              <div class="bg-surface-container-low rounded p-gutter-sm">
+                <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Chi tiêu tháng 11</p>
+                <p data-design-text-token="mono-lg" class="font-mono text-mono-lg text-error tabular-nums mt-0.5">-2.650.000 ₫</p>
+              </div>
+            </div>
+          </article>
+
+          <article data-component-id="card-action" data-component-type="card" data-component-variant="action" class="lg:col-span-5 bg-surface-container-low border border-outline-variant rounded-lg p-gutter-lg flex flex-col justify-between gap-gutter-md">
+            <div class="flex flex-col gap-gutter-sm">
+              <div class="flex items-center justify-between gap-gutter-sm">
+                <span data-component-id="badge-warning" data-component-type="badge" data-component-variant="warning" role="status" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-warning-container text-on-warning-container">
+                  <span class="material-symbols-outlined text-[14px]" aria-hidden="true">auto_awesome</span>
+                  <span data-design-text-token="label-sm" class="font-label text-label-sm">Ước tính AI · Tham khảo</span>
+                </span>
+                <span data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">45 ngày tới</span>
+              </div>
+              <h2 data-design-text-token="title-md" class="font-title text-title-md text-on-surface">Lưu ý tiền trọ đầu tháng 12</h2>
+              <p data-design-text-token="body-md" class="font-body text-body-md text-on-surface-variant">
+                Sau khi trừ tiền trọ 01/12, số dư ước tính có thể chạm <strong class="font-semibold text-on-surface tabular-nums">1.650.000 ₫</strong> trước kỳ lương 05/12.
+              </p>
+            </div>
+            <div class="flex items-center gap-gutter-sm">
+              <a href="../assistant/Assistant.html" class="inline-flex items-center justify-center gap-gutter-sm min-h-[44px] px-gutter-md rounded bg-primary text-on-primary font-label text-label-lg">
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">chat</span>
+                <span data-design-text-token="label-lg">Hỏi FinPilot</span>
+              </a>
+              <a href="../simulator/Simulator.html" class="inline-flex items-center justify-center min-h-[44px] px-gutter-md rounded border border-outline-variant bg-surface-container-lowest text-primary font-label text-label-lg">
+                <span data-design-text-token="label-lg">Xem phân tích</span>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <!-- 45-Day Chart -->
+        <section aria-label="Biểu đồ dòng tiền 45 ngày" class="bg-surface-container-lowest border border-outline-variant/70 rounded-lg p-gutter-lg shadow-sm flex flex-col gap-gutter-md">
+          <div class="flex items-center justify-between gap-gutter-sm">
+            <div>
+              <h2 data-design-text-token="title-lg" class="font-title text-title-lg text-on-surface">Dự báo dòng tiền 45 ngày</h2>
+              <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Ước tính từ số dư hiện tại, hóa đơn định kỳ và mức chi tiêu trung bình</p>
+            </div>
+            <div class="flex items-center gap-gutter-md">
+              <span class="inline-flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+                <span data-design-text-token="label-sm" class="font-label text-label-sm text-on-surface-variant">Số dư dự kiến</span>
+              </span>
+              <span class="inline-flex items-center gap-1.5">
+                <span class="w-3 border-t-2 border-dashed border-warning"></span>
+                <span data-design-text-token="label-sm" class="font-label text-label-sm text-on-surface-variant">Ngưỡng 1,5tr</span>
+              </span>
+            </div>
+          </div>
+
+          <svg viewBox="0 0 640 175" class="w-full h-auto" role="img" aria-label="Biểu đồ đường dự báo số dư 45 ngày">
+            <line x1="48" y1="24" x2="624" y2="24" stroke="#E3E0F4" stroke-width="1"></line>
+            <line x1="48" y1="74" x2="624" y2="74" stroke="#E3E0F4" stroke-width="1"></line>
+            <line x1="48" y1="124" x2="624" y2="124" stroke="#E3E0F4" stroke-width="1"></line>
+            <line x1="48" y1="136" x2="624" y2="136" stroke="#B45309" stroke-width="1.5" stroke-dasharray="6 4"></line>
+            <text x="52" y="130" fill="#B45309" font-size="10" font-family="Instrument Sans, sans-serif" font-weight="600">Ngưỡng dự phòng 1,5tr</text>
+            <text x="42" y="28" text-anchor="end" fill="#777587" font-size="10" font-family="Red Hat Mono, monospace">6tr</text>
+            <text x="42" y="78" text-anchor="end" fill="#777587" font-size="10" font-family="Red Hat Mono, monospace">4tr</text>
+            <text x="42" y="128" text-anchor="end" fill="#777587" font-size="10" font-family="Red Hat Mono, monospace">2tr</text>
+            <path d="M48,54 L120,66 L192,130 L240,132 L290,46 L380,68 L470,92 L550,104 L624,84" fill="none" stroke="#0051D5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <circle cx="48" cy="54" r="4" fill="#3525CD"></circle>
+            <circle cx="240" cy="132" r="4" fill="#B45309"></circle>
+            <circle cx="290" cy="46" r="4" fill="#15803D"></circle>
+            <circle cx="624" cy="84" r="4" fill="#0051D5"></circle>
+            <text x="48" y="164" fill="#777587" font-size="10" font-family="Instrument Sans, sans-serif">Hôm nay</text>
+            <text x="220" y="164" fill="#B45309" font-size="10" font-family="Instrument Sans, sans-serif" font-weight="600">02/12 (Trọ)</text>
+            <text x="290" y="164" fill="#15803D" font-size="10" font-family="Instrument Sans, sans-serif" font-weight="600">05/12 (Lương)</text>
+            <text x="580" y="164" fill="#777587" font-size="10" font-family="Instrument Sans, sans-serif">+45 ngày</text>
+          </svg>
+        </section>
+
+        <!-- Recurring + Recent Transactions -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-md items-stretch">
+          <section aria-label="Định kỳ sắp tới" class="lg:col-span-5 bg-surface-container-lowest border border-outline-variant/70 rounded-lg p-gutter-lg shadow-sm flex flex-col gap-gutter-md">
+            <div class="flex items-center justify-between">
+              <h2 data-design-text-token="title-lg" class="font-title text-title-lg text-on-surface">Định kỳ sắp tới</h2>
+              <a href="../settings/Settings.html" class="text-primary font-label text-label-md hover:underline">
+                <span data-design-text-token="label-md">Chỉnh sửa</span>
+              </a>
+            </div>
+            <ul class="flex flex-col gap-gutter-sm">
+              <li class="flex items-center justify-between gap-gutter-sm p-gutter-sm rounded bg-surface-container-low">
+                <div>
+                  <p data-design-text-token="label-lg" class="font-label text-label-lg text-on-surface">Tiền trọ &amp; điện nước</p>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant tabular-nums">01/12/2026</p>
+                </div>
+                <span data-design-text-token="mono-md" class="font-mono text-mono-md text-error tabular-nums">-3.200.000 ₫</span>
+              </li>
+              <li class="flex items-center justify-between gap-gutter-sm p-gutter-sm rounded bg-surface-container-low">
+                <div>
+                  <p data-design-text-token="label-lg" class="font-label text-label-lg text-on-surface">Lương thực tập IT</p>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant tabular-nums">05/12/2026</p>
+                </div>
+                <span data-design-text-token="mono-md" class="font-mono text-mono-md text-success tabular-nums">+4.500.000 ₫</span>
+              </li>
+            </ul>
+          </section>
+
+          <section aria-label="Giao dịch gần đây" class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant/70 rounded-lg p-gutter-lg shadow-sm flex flex-col gap-gutter-md">
+            <div class="flex items-center justify-between">
+              <h2 data-design-text-token="title-lg" class="font-title text-title-lg text-on-surface">Giao dịch gần đây</h2>
+              <a href="../transactions/Transactions.html" class="inline-flex items-center gap-1 text-primary font-label text-label-md hover:underline">
+                <span data-design-text-token="label-md">Xem tất cả</span>
+                <span class="material-symbols-outlined text-[16px]" aria-hidden="true">arrow_forward</span>
+              </a>
+            </div>
+            <ul class="divide-y divide-outline-variant/40">
+              <li class="py-gutter-sm flex items-center justify-between gap-gutter-sm">
+                <div>
+                  <p data-design-text-token="label-lg" class="font-label text-label-lg text-on-surface">Highlands Coffee</p>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Ăn uống · Hôm nay</p>
+                </div>
+                <span data-design-text-token="mono-md" class="font-mono text-mono-md text-error tabular-nums">-65.000 ₫</span>
+              </li>
+              <li class="py-gutter-sm flex items-center justify-between gap-gutter-sm">
+                <div>
+                  <p data-design-text-token="label-lg" class="font-label text-label-lg text-on-surface">GrabBike đi làm</p>
+                  <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Di chuyển · Hôm qua</p>
+                </div>
+                <span data-design-text-token="mono-md" class="font-mono text-mono-md text-error tabular-nums">-38.000 ₫</span>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+
+</body></html>

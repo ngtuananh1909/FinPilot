@@ -1,0 +1,46 @@
+persona_code,occurred_at,kind,amount_vnd,category,merchant,description
+at_risk,2026-10-27T12:30:00+07:00,expense,480000,groceries,Supermarket,Synthetic demo purchase
+at_risk,2026-10-30T12:30:00+07:00,expense,390000,food,Restaurant,Synthetic demo purchase
+at_risk,2026-11-01T12:30:00+07:00,expense,280000,coffee,Cafe,Synthetic demo purchase
+at_risk,2026-11-03T12:30:00+07:00,expense,330000,food,Food Court,Synthetic demo purchase
+at_risk,2026-11-04T12:30:00+07:00,expense,360000,transport,Ride,Synthetic demo purchase
+at_risk,2026-11-06T12:30:00+07:00,expense,500000,groceries,Supermarket,Synthetic demo purchase
+at_risk,2026-11-08T12:30:00+07:00,expense,240000,food,Restaurant,Synthetic demo purchase
+at_risk,2026-11-10T12:30:00+07:00,expense,700000,shopping,Online Shop,Synthetic demo purchase
+at_risk,2026-11-11T12:30:00+07:00,expense,370000,food,Food Court,Synthetic demo purchase
+at_risk,2026-11-13T12:30:00+07:00,expense,190000,transport,Ride,Synthetic demo purchase
+at_risk,2026-11-14T12:30:00+07:00,expense,450000,groceries,Supermarket,Synthetic demo purchase
+at_risk,2026-11-16T12:30:00+07:00,expense,270000,food,Restaurant,Synthetic demo purchase
+at_risk,2026-11-18T12:30:00+07:00,expense,560000,shopping,Store,Synthetic demo purchase
+at_risk,2026-11-19T12:30:00+07:00,expense,350000,transport,Ride,Synthetic demo purchase
+at_risk,2026-11-21T12:30:00+07:00,expense,390000,food,Food Court,Synthetic demo purchase
+student,2026-10-28T12:30:00+07:00,expense,92000,groceries,Mini Mart,Synthetic demo purchase
+student,2026-10-30T12:30:00+07:00,expense,50000,food,Canteen,Synthetic demo purchase
+student,2026-11-01T12:30:00+07:00,expense,68000,food,Cafe,Synthetic demo purchase
+student,2026-11-03T12:30:00+07:00,expense,30000,transport,Bus,Synthetic demo purchase
+student,2026-11-05T12:30:00+07:00,expense,40000,food,Canteen,Synthetic demo purchase
+student,2026-11-07T12:30:00+07:00,expense,118000,groceries,Mini Mart,Synthetic demo purchase
+student,2026-11-09T12:30:00+07:00,expense,45000,food,Canteen,Synthetic demo purchase
+student,2026-11-11T12:30:00+07:00,expense,75000,education,Stationery,Synthetic demo purchase
+student,2026-11-12T12:30:00+07:00,expense,60000,food,Canteen,Synthetic demo purchase
+student,2026-11-14T12:30:00+07:00,expense,65000,transport,Ride,Synthetic demo purchase
+student,2026-11-15T12:30:00+07:00,expense,35000,food,Tea Shop,Synthetic demo purchase
+student,2026-11-17T12:30:00+07:00,expense,115000,groceries,Mini Mart,Synthetic demo purchase
+student,2026-11-18T12:30:00+07:00,expense,45000,food,Canteen,Synthetic demo purchase
+student,2026-11-20T12:30:00+07:00,expense,90000,transport,Bus,Synthetic demo purchase
+student,2026-11-21T12:30:00+07:00,expense,42000,food,Canteen,Synthetic demo purchase
+worker,2026-10-28T12:30:00+07:00,expense,160000,groceries,Supermarket,Synthetic demo purchase
+worker,2026-10-30T12:30:00+07:00,expense,85000,food,Lunch,Synthetic demo purchase
+worker,2026-11-01T12:30:00+07:00,expense,52000,coffee,Cafe,Synthetic demo purchase
+worker,2026-11-03T12:30:00+07:00,expense,140000,food,Restaurant,Synthetic demo purchase
+worker,2026-11-05T12:30:00+07:00,expense,80000,transport,Ride,Synthetic demo purchase
+worker,2026-11-06T12:30:00+07:00,expense,120000,food,Lunch,Synthetic demo purchase
+worker,2026-11-08T12:30:00+07:00,expense,98000,groceries,Supermarket,Synthetic demo purchase
+worker,2026-11-09T12:30:00+07:00,expense,70000,food,Lunch,Synthetic demo purchase
+worker,2026-11-11T12:30:00+07:00,expense,250000,shopping,Clothing,Synthetic demo purchase
+worker,2026-11-13T12:30:00+07:00,expense,45000,transport,Bus,Synthetic demo purchase
+worker,2026-11-14T12:30:00+07:00,expense,160000,food,Restaurant,Synthetic demo purchase
+worker,2026-11-16T12:30:00+07:00,expense,110000,food,Lunch,Synthetic demo purchase
+worker,2026-11-18T12:30:00+07:00,expense,90000,groceries,Supermarket,Synthetic demo purchase
+worker,2026-11-19T12:30:00+07:00,expense,65000,transport,Ride,Synthetic demo purchase
+worker,2026-11-21T12:30:00+07:00,expense,110000,food,Lunch,Synthetic demo purchase

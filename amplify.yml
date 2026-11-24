@@ -1,0 +1,28 @@
+version: 1
+# AWS Amplify Hosting build spec for FinPilot AI (Next.js 15 SSR).
+# Takes effect only after an owner-approved push (G4). It creates no AWS resources by itself.
+# Server-side variables are NOT visible to the Next.js SSR runtime by default; the documented way
+# is to write them into .env.production during the build. `env | grep ... >>` writes to the file
+# only and prints nothing to the build log. See docs/19-amplify-release-runbook.md.
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Amazon Linux 2023 image: use Node 22 (vitest needs >=22.12 locally; Next 15 needs >=18.18).
+        - nvm install 22
+        - nvm use 22
+        - node --version
+        - npm ci
+    build:
+      commands:
+        - env | grep -e '^NEXT_PUBLIC_' >> .env.production
+        - env | grep -e '^SUPABASE_SERVICE_ROLE_KEY=' -e '^AI_' -e '^GUEST_CHAT_DAILY_LIMIT=' -e '^GUEST_SCAN_DAILY_LIMIT=' -e '^RECEIPT_MAX_BYTES=' -e '^CSV_MAX_BYTES=' >> .env.production || true
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .next/cache/**/*

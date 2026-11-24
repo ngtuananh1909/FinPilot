@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="vi"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cài đặt — FinPilot AI</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'primary': '#3525CD',
+        'on-primary': '#FFFFFF',
+        'primary-container': '#E2DFFF',
+        'on-primary-container': '#0F0069',
+        'secondary': '#0051D5',
+        'on-secondary': '#FFFFFF',
+        'secondary-container': '#DBE1FF',
+        'on-secondary-container': '#00174B',
+        'tertiary': '#7E3000',
+        'on-tertiary': '#FFFFFF',
+        'tertiary-container': '#FFDBCC',
+        'on-tertiary-container': '#351000',
+        'success': '#15803D',
+        'on-success': '#FFFFFF',
+        'success-container': '#DCFCE7',
+        'on-success-container': '#14532D',
+        'warning': '#B45309',
+        'on-warning': '#FFFFFF',
+        'warning-container': '#FEF3C7',
+        'on-warning-container': '#78350F',
+        'error': '#BA1A1A',
+        'on-error': '#FFFFFF',
+        'error-container': '#FFDAD6',
+        'on-error-container': '#93000A',
+        'background': '#FCF8FF',
+        'on-background': '#1B1B24',
+        'surface': '#FCF8FF',
+        'surface-dim': '#DCD8E5',
+        'surface-bright': '#FCF8FF',
+        'surface-container-lowest': '#FFFFFF',
+        'surface-container-low': '#F5F2FF',
+        'surface-container': '#F0ECF9',
+        'surface-container-high': '#EAE6F4',
+        'surface-container-highest': '#E4E1EE',
+        'on-surface': '#1B1B24',
+        'surface-variant': '#E3E0F4',
+        'on-surface-variant': '#464555',
+        'outline': '#777587',
+        'outline-variant': '#C7C4D8',
+        'inverse-surface': '#302F39',
+        'inverse-on-surface': '#F3EFFC',
+        'inverse-primary': '#C3C0FF',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '12px',
+        'lg': '16px',
+        'xl': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '32px',
+        'page-margin': '16px',
+      },
+      fontFamily: {
+        'display': ['"Alata"', 'sans-serif'],
+        'headline': ['"Alata"', 'sans-serif'],
+        'title': ['"Instrument Sans"', 'sans-serif'],
+        'body': ['"Instrument Sans"', 'sans-serif'],
+        'label': ['"Instrument Sans"', 'sans-serif'],
+        'mono': ['"Red Hat Mono"', 'monospace'],
+      },
+      fontSize: {
+        'display-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.5px', fontWeight: '400' }],
+        'display-lg-mobile': ['30px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '400' }],
+        'headline-lg': ['28px', { lineHeight: '36px', letterSpacing: '-0.25px', fontWeight: '400' }],
+        'headline-md': ['22px', { lineHeight: '28px', letterSpacing: '0px', fontWeight: '400' }],
+        'title-lg': ['18px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['16px', { lineHeight: '22px', letterSpacing: '0px', fontWeight: '600' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '400' }],
+        'body-sm': ['12px', { lineHeight: '16px', letterSpacing: '0px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '600' }],
+        'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.2px', fontWeight: '600' }],
+        'label-sm': ['11px', { lineHeight: '14px', letterSpacing: '0.3px', fontWeight: '600' }],
+        'mono-lg': ['18px', { lineHeight: '24px', letterSpacing: '-0.2px', fontWeight: '600' }],
+        'mono-md': ['14px', { lineHeight: '20px', letterSpacing: '0px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '120ms',
+        'surface-enter': '220ms',
+        'surface-exit': '150ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Red+Hat+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>.material-symbols-outlined, .material-symbols-rounded, .material-symbols-sharp, .material-icons { display: inline-block; width: 1em; height: 1em; line-height: 1 !important; box-sizing: content-box; overflow: hidden; white-space: nowrap; direction: ltr; vertical-align: middle; }</style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+  <div class="min-h-[884px] flex flex-col lg:flex-row" data-stitch-vh="min-h-[884px]===min-h-screen">
+    <!-- Desktop Left Sidebar -->
+    <aside class="hidden lg:flex lg:flex-col lg:w-64 lg:min-h-[884px] shrink-0 bg-surface-container-lowest border-r border-outline-variant p-gutter-lg justify-between" data-stitch-vh="lg:min-h-[884px]===lg:min-h-screen">
+      <div class="flex flex-col gap-gutter-lg">
+        <div class="flex items-center justify-between gap-gutter-sm">
+          <a href="../dashboard/Dashboard.html" class="flex items-center gap-gutter-sm">
+            <span class="w-9 h-9 rounded bg-primary text-on-primary inline-flex items-center justify-center">
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">explore</span>
+            </span>
+            <span data-design-text-token="title-lg" class="font-headline text-title-lg text-on-surface">FinPilot AI</span>
+          </a>
+        </div>
+
+        <span data-component-id="badge-status" data-component-type="badge" data-component-variant="status" role="status" class="inline-flex self-start items-center gap-1 px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container">
+          <span data-design-text-token="label-sm" class="font-label text-label-sm">Chế độ Demo</span>
+        </span>
+
+        <nav aria-label="Điều hướng chính" class="flex flex-col gap-gutter-xs">
+          <a href="../dashboard/Dashboard.html" class="flex items-center gap-gutter-md min-h-[44px] px-gutter-md rounded text-on-surface-variant hover:bg-surface-container-low">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">home</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Dashboard</span>
+          </a>
+          <a href="../transactions/Transactions.html" class="flex items-center gap-gutter-md min-h-[44px] px-gutter-md rounded text-on-surface-variant hover:bg-surface-container-low">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">receipt_long</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Transactions</span>
+          </a>
+          <a href="../assistant/Assistant.html" class="flex items-center gap-gutter-md min-h-[44px] px-gutter-md rounded text-on-surface-variant hover:bg-surface-container-low">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">auto_awesome</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">AI Assistant</span>
+          </a>
+          <a href="../simulator/Simulator.html" class="flex items-center gap-gutter-md min-h-[44px] px-gutter-md rounded text-on-surface-variant hover:bg-surface-container-low">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">calculate</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Simulator</span>
+          </a>
+          <a href="../settings/Settings.html" aria-current="page" class="flex items-center gap-gutter-md min-h-[44px] px-gutter-md rounded bg-primary-container text-on-primary-container">
+            <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &#39;FILL&#39; 1;" aria-hidden="true">settings</span>
+            <span data-design-text-token="label-lg" class="font-label text-label-lg">Settings</span>
+          </a>
+        </nav>
+      </div>
+
+      <a href="../settings/Settings.html" class="flex items-center gap-gutter-md p-gutter-sm rounded-lg border border-outline-variant/60 hover:bg-surface-container-low">
+        <img src="https://lh3.googleusercontent.com/aida/ALJJyrDKL4qm0ZsfKSgTpH8hB0Xo7-dKp4NZ7lykYtKMNXAZbPozXmleQa-tv3F4KO5d-iyW00WgGAeuzjT-x7IR2olCPYN-LupN0CQJ303pBtXHb76dtuY5F7-C_1V5NQPoSosCOakiNguyGtfmhbdf799mZgSrcJXbps1s20MPYy4jT-mAaFNS01_uJ18lWKyVbxwz6GAmD4Ss04xvcDWrOwWb8BIU4lO2wH3fXV8U3-1xvTNNiwOn" alt="Ảnh đại diện Minh Anh" class="w-10 h-10 rounded-full object-cover shrink-0">
+        <div class="min-w-0">
+          <p data-design-text-token="label-lg" class="font-label text-label-lg text-on-surface">Minh Anh</p>
+          <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Sinh viên · Demo</p>
+        </div>
+      </a>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="flex-1 flex flex-col min-w-0 pb-24 lg:pb-gutter-xl">
+      <!-- Top Header -->
+      <header class="sticky top-0 z-20 bg-surface border-b border-outline-variant/50 px-page-margin lg:px-gutter-xl h-16 flex items-center justify-between gap-gutter-sm">
+        <div class="flex items-center gap-gutter-sm lg:hidden">
+          <a href="../dashboard/Dashboard.html" aria-label="Quay lại Dashboard" class="w-9 h-9 rounded-full inline-flex items-center justify-center hover:bg-surface-container-low text-on-surface">
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">arrow_back</span>
+          </a>
+          <span data-design-text-token="title-md" class="font-headline text-title-md text-on-surface">Cài đặt &amp; Hồ sơ</span>
+        </div>
+
+        <div class="hidden lg:flex items-center gap-gutter-sm">
+          <h1 data-design-text-token="headline-md" class="font-headline text-headline-md text-on-surface">Cài đặt tài chính</h1>
+        </div>
+
+        <div class="flex items-center gap-gutter-sm">
+          <span data-component-id="badge-status" data-component-type="badge" data-component-variant="status" role="status" class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container">
+            <span data-design-text-token="label-sm" class="font-label text-label-sm">Chế độ Demo</span>
+          </span>
+        </div>
+      </header>
+
+      <main class="w-full max-w-4xl mx-auto px-page-margin lg:px-gutter-xl py-gutter-md lg:py-gutter-lg flex flex-col gap-gutter-md">
+        <!-- 1. Financial Profile + Current Balance Snapshot -->
+        <section aria-label="Hồ sơ tài chính và số dư hiện tại" class="bg-surface-container-lowest border border-outline-variant/70 rounded-lg p-gutter-lg shadow-sm flex flex-col gap-gutter-md">
+          <div class="flex items-start justify-between gap-gutter-sm">
+            <div class="flex items-center gap-gutter-md">
+              <img src="https://lh3.googleusercontent.com/aida/ALJJyrDKL4qm0ZsfKSgTpH8hB0Xo7-dKp4NZ7lykYtKMNXAZbPozXmleQa-tv3F4KO5d-iyW00WgGAeuzjT-x7IR2olCPYN-LupN0CQJ303pBtXHb76dtuY5F7-C_1V5NQPoSosCOakiNguyGtfmhbdf799mZgSrcJXbps1s20MPYy4jT-mAaFNS01_uJ18lWKyVbxwz6GAmD4Ss04xvcDWrOwWb8BIU4lO2wH3fXV8U3-1xvTNNiwOn" alt="Ảnh đại diện Minh Anh" class="w-14 h-14 rounded-full object-cover border border-outline-variant shrink-0">
+              <div>
+                <h2 data-design-text-token="title-lg" class="font-title text-title-lg text-on-surface">Nguyễn Minh Anh</h2>
+                <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Sinh viên năm 4 · Thực tập IT · TP.HCM</p>
+              </div>
+            </div>
+            <button type="button" class="inline-flex items-center gap-1 min-h-[36px] px-3 rounded border border-outline-variant text-primary font-label text-label-md hover:bg-surface-container-low">
+              <span class="material-symbols-outlined text-[16px]" aria-hidden="true">edit</span>
+              <span data-design-text-token="label-md">Chỉnh sửa</span>
+            </button>
+          </div>
+
+          <div class="bg-surface-container-low rounded p-gutter-md flex items-center justify-between gap-gutter-sm">
+            <span data-design-text-token="body-md" class="font-body text-body-md text-on-surface-variant">Số dư ước tính hiện tại</span>
+            <span data-design-text-token="mono-lg" class="font-mono text-mono-lg text-on-surface tabular-nums">4.850.000 ₫</span>
+          </div>
+        </section>
+
+        <!-- 2. Salary / Allowance & Payday -->
+        <section aria-label="Lương, trợ cấp và ngày nhận" class="bg-surface-container-lowest border border-outline-variant/70 rounded-lg p-gutter-lg shadow-sm flex flex-col gap-gutter-md">
+          <div class="flex items-center justify-between gap-gutter-sm">
+            <h2 data-design-text-token="title-md" class="font-title text-title-md text-on-surface">Thu nhập định kỳ &amp; ngày nhận</h2>
+            <button type="button" class="inline-flex items-center gap-1 min-h-[36px] px-3 rounded border border-outline-variant text-primary font-label text-label-md hover:bg-surface-container-low">
+              <span class="material-symbols-outlined text-[16px]" aria-hidden="true">edit</span>
+              <span data-design-text-token="label-md">Chỉnh sửa</span>
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter-sm">
+            <div class="bg-surface-container-low rounded p-gutter-md">
+              <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Lương thực tập part-time</p>
+              <p data-design-text-token="mono-lg" class="font-mono text-mono-lg text-success tabular-nums mt-0.5">+4.500.000 ₫ / tháng</p>
+              <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant tabular-nums mt-1">Ngày nhận: mùng 05 hằng tháng</p>
+            </div>
+            <div class="bg-surface-container-low rounded p-gutter-md">
+              <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Trợ cấp gia đình</p>
+              <p data-design-text-token="mono-lg" class="font-mono text-mono-lg text-success tabular-nums mt-0.5">+3.000.000 ₫ / tháng</p>
+              <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant tabular-nums mt-1">Ngày nhận: ngày 18 hằng tháng</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Monthly Recurring Bills -->
+        <section aria-label="Hóa đơn cố định hằng tháng" class="bg-surface-container-lowest border border-outline-variant/70 rounded-lg p-gutter-lg shadow-sm flex flex-col gap-gutter-md">
+          <div class="flex items-center justify-between gap-gutter-sm">
+            <h2 data-design-text-token="title-md" class="font-title text-title-md text-on-surface">Chi phí cố định hằng tháng</h2>
+            <button type="button" class="inline-flex items-center gap-1 min-h-[36px] px-3 rounded border border-outline-variant text-primary font-label text-label-md hover:bg-surface-container-low">
+              <span class="material-symbols-outlined text-[16px]" aria-hidden="true">edit</span>
+              <span data-design-text-token="label-md">Chỉnh sửa</span>
+            </button>
+          </div>
+
+          <ul class="divide-y divide-outline-variant/40">
+            <li class="py-gutter-sm flex items-center justify-between gap-gutter-sm">
+              <div>
+                <p data-design-text-token="label-lg" class="font-label text-label-lg text-on-surface">Tiền trọ &amp; điện nước</p>
+                <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant tabular-nums">Ngày 01 hằng tháng</p>
+              </div>
+              <span data-design-text-token="mono-md" class="font-mono text-mono-md text-error tabular-nums">-3.200.000 ₫</span>
+            </li>
+            <li class="py-gutter-sm flex items-center justify-between gap-gutter-sm">
+              <div>
+                <p data-design-text-token="label-lg" class="font-label text-label-lg text-on-surface">Internet &amp; gói 4G</p>
+                <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant tabular-nums">Ngày 10 hằng tháng</p>
+              </div>
+              <span data-design-text-token="mono-md" class="font-mono text-mono-md text-error tabular-nums">-220.000 ₫</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 4. Expected Variable Spending + Minimum Reserve (Expanded Edit Form State) -->
+        <section aria-label="Chi tiêu biến đổi và ngưỡng dự phòng" class="bg-surface-container-lowest border border-primary/40 rounded-lg p-gutter-lg shadow-sm flex flex-col gap-gutter-md">
+          <div class="flex items-center justify-between gap-gutter-sm">
+            <div>
+              <h2 data-design-text-token="title-md" class="font-title text-title-md text-on-surface">Chi tiêu biến đổi &amp; Ngưỡng dự phòng</h2>
+              <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Dùng để tính đường dự báo 45 ngày và cảnh báo rủi ro.</p>
+            </div>
+            <span data-component-id="badge-status" data-component-type="badge" data-component-variant="status" role="status" class="inline-flex items-center px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container shrink-0">
+              <span data-design-text-token="label-sm" class="font-label text-label-sm">Đang sửa</span>
+            </span>
+          </div>
+
+          <form class="grid grid-cols-1 sm:grid-cols-2 gap-gutter-md" onsubmit="return false;">
+            <label data-component-id="input-field-text" data-component-type="input-field" data-component-variant="text" class="flex flex-col gap-gutter-xs">
+              <span data-design-text-token="label-md" class="font-label text-label-md text-on-surface">Chi tiêu sinh hoạt dự kiến / tuần (₫)</span>
+              <input type="text" value="650.000" inputmode="numeric" class="w-full min-h-[44px] px-gutter-md rounded bg-surface-container-lowest border border-outline-variant font-mono text-mono-md text-on-surface tabular-nums focus:border-primary focus:ring-1 focus:ring-primary">
+            </label>
+
+            <label data-component-id="input-field-text" data-component-type="input-field" data-component-variant="text" class="flex flex-col gap-gutter-xs">
+              <span data-design-text-token="label-md" class="font-label text-label-md text-on-surface">Ngưỡng dự phòng tối thiểu (₫)</span>
+              <input type="text" value="1.500.000" inputmode="numeric" class="w-full min-h-[44px] px-gutter-md rounded bg-surface-container-lowest border border-outline-variant font-mono text-mono-md text-on-surface tabular-nums focus:border-primary focus:ring-1 focus:ring-primary">
+            </label>
+
+            <div class="sm:col-span-2 flex items-center justify-end gap-gutter-sm">
+              <button type="button" data-component-id="button-secondary" data-component-type="button" data-component-variant="secondary" class="min-h-[44px] px-gutter-md rounded bg-surface-container-low border border-outline-variant text-on-surface font-label text-label-lg">
+                <span data-design-text-token="label-lg">Hủy</span>
+              </button>
+              <button type="button" data-component-id="button-primary" data-component-type="button" data-component-variant="primary" class="min-h-[44px] px-gutter-lg rounded bg-primary text-on-primary font-label text-label-lg shadow-sm">
+                <span data-design-text-token="label-lg">Lưu thay đổi</span>
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- 5. One Savings Goal -->
+        <section aria-label="Mục tiêu tiết kiệm" class="bg-surface-container-lowest border border-outline-variant/70 rounded-lg p-gutter-lg shadow-sm flex flex-col gap-gutter-md">
+          <div class="flex items-center justify-between gap-gutter-sm">
+            <div class="flex items-center gap-gutter-sm">
+              <span class="w-9 h-9 rounded-full bg-primary-container text-on-primary-container inline-flex items-center justify-center">
+                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">savings</span>
+              </span>
+              <div>
+                <h2 data-design-text-token="title-md" class="font-title text-title-md text-on-surface">Mục tiêu tiết kiệm: Quỹ laptop mới</h2>
+                <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant tabular-nums">6.200.000 ₫ / 15.000.000 ₫ (41%)</p>
+              </div>
+            </div>
+            <button type="button" class="inline-flex items-center gap-1 min-h-[36px] px-3 rounded border border-outline-variant text-primary font-label text-label-md hover:bg-surface-container-low">
+              <span class="material-symbols-outlined text-[16px]" aria-hidden="true">edit</span>
+              <span data-design-text-token="label-md">Chỉnh sửa</span>
+            </button>
+          </div>
+
+          <div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden" role="progressbar" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" aria-label="Tiến độ quỹ laptop mới">
+            <div class="h-full w-[41%] rounded-full bg-primary"></div>
+          </div>
+        </section>
+
+        <!-- 6. Account / Session & Guest Reset Demo -->
+        <section aria-label="Tài khoản và phiên Demo" class="bg-surface-container-lowest border border-outline-variant/70 rounded-lg p-gutter-lg shadow-sm flex flex-col gap-gutter-md">
+          <div class="flex flex-wrap items-center justify-between gap-gutter-sm">
+            <div>
+              <h2 data-design-text-token="title-md" class="font-title text-title-md text-on-surface">Phiên làm việc &amp; Chế độ Demo</h2>
+              <p data-design-text-token="body-sm" class="font-body text-body-sm text-on-surface-variant">Đang dùng hồ sơ mẫu &#34;Sinh viên&#34;. Dữ liệu lưu cục bộ trên trình duyệt.</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-gutter-sm">
+              <button type="button" onclick="document.getElementById(&#39;reset-demo-dialog&#39;).showModal()" data-component-id="button-destructive" data-component-type="button" data-component-variant="destructive" class="inline-flex items-center gap-1.5 min-h-[44px] px-gutter-md rounded bg-error text-on-error font-label text-label-lg hover:opacity-95">
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">restart_alt</span>
+                <span data-design-text-token="label-lg">Đặt lại Demo</span>
+              </button>
+              <a href="../welcome/Welcome.html" class="inline-flex items-center gap-1.5 min-h-[44px] px-gutter-md rounded border border-outline-variant text-on-surface font-label text-label-lg hover:bg-surface-container-low">
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">logout</span>
+                <span data-design-text-token="label-lg">Đổi hồ sơ</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Guest Reset Confirmation Dialog -->
+    <dialog id="reset-demo-dialog" role="alertdialog" data-component-id="modal-alert" data-component-type="modal" data-component-variant="alert" aria-labelledby="reset-dialog-title" aria-describedby="reset-dialog-desc" class="w-full max-w-sm rounded-xl bg-surface-container-lowest border border-outline-variant p-gutter-lg shadow-lg text-on-surface">
+      <header class="mb-gutter-sm">
+        <h2 id="reset-dialog-title" data-design-text-token="title-lg" class="font-title text-title-lg text-on-surface">Đặt lại dữ liệu Demo?</h2>
+      </header>
+      <div id="reset-dialog-desc" class="mb-gutter-lg">
+        <p data-design-text-token="body-md" class="font-body text-body-md text-on-surface-variant">Mọi giao dịch, mô phỏng và chỉnh sửa bạn vừa thử sẽ trở về dữ liệu mẫu ban đầu.</p>
+      </div>
+      <footer class="flex items-center justify-end gap-gutter-sm">
+        <button type="button" onclick="document.getElementById(&#39;reset-demo-dialog&#39;).close()" class="min-h-[40px] px-gutter-md rounded bg-surface-container-low text-on-surface font-label text-label-lg">
+          <span data-design-text-token="label-lg">Hủy</span>
+        </button>
+        <button type="button" onclick="document.getElementById(&#39;reset-demo-dialog&#39;).close()" class="min-h-[40px] px-gutter-md rounded bg-error text-on-error font-label text-label-lg">
+          <span data-design-text-token="label-lg">Xác nhận đặt lại</span>
+        </button>
+      </footer>
+    </dialog>
+
+    <!-- Mobile Fixed Bottom Navigation -->
+    <nav aria-label="Điều hướng di động" class="lg:hidden fixed bottom-0 inset-x-0 z-30 bg-surface-container-lowest border-t border-outline-variant h-16 px-gutter-sm grid grid-cols-4 items-center">
+      <a href="../dashboard/Dashboard.html" class="flex flex-col items-center justify-center gap-0.5 min-h-[44px] text-on-surface-variant">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">home</span>
+        <span data-design-text-token="label-sm" class="font-label text-label-sm">Home</span>
+      </a>
+      <a href="../transactions/Transactions.html" class="flex flex-col items-center justify-center gap-0.5 min-h-[44px] text-on-surface-variant">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">receipt_long</span>
+        <span data-design-text-token="label-sm" class="font-label text-label-sm">Thu chi</span>
+      </a>
+      <a href="../assistant/Assistant.html" class="flex flex-col items-center justify-center gap-0.5 min-h-[44px] text-on-surface-variant">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">auto_awesome</span>
+        <span data-design-text-token="label-sm" class="font-label text-label-sm">AI</span>
+      </a>
+      <a href="../simulator/Simulator.html" class="flex flex-col items-center justify-center gap-0.5 min-h-[44px] text-on-surface-variant">
+        <span class="material-symbols-outlined text-[22px]" aria-hidden="true">calculate</span>
+        <span data-design-text-token="label-sm" class="font-label text-label-sm">Mô phỏng</span>
+      </a>
+    </nav>
+  </div>
+
+
+</body></html>

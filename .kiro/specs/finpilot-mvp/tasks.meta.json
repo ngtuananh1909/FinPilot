@@ -1,0 +1,31 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "**T01.2** Implement strict `.env` validation, Supabase SSR Auth session handling, error system, mobile app shell and loading states.": [
+      {
+        "executionId": "8314137c-9512-4125-b1ab-5748c9ee2a5e",
+        "chatSessionId": "sess_5754f3ed-6eb4-4c2d-a525-393fb4a814ce",
+        "timestamp": 1795430228084
+      },
+      {
+        "executionId": "8314137c-9512-4125-b1ab-5748c9ee2a5e",
+        "chatSessionId": "sess_5754f3ed-6eb4-4c2d-a525-393fb4a814ce",
+        "timestamp": 1795430583856
+      }
+    ],
+    "**T01.3** Review candidate SQL, RLS policies, FK ownership and quota function; prepare **separate G2 remote migration approval**, do not run migration yet.": [
+      {
+        "executionId": "8314137c-9512-4125-b1ab-5748c9ee2a5e",
+        "chatSessionId": "sess_5754f3ed-6eb4-4c2d-a525-393fb4a814ce",
+        "timestamp": 1795430589725
+      }
+    ],
+    "**T01.4** Implement DB repository with verified owner context and schema types; RLS adversarial test strategy.": [
+      {
+        "executionId": "8314137c-9512-4125-b1ab-5748c9ee2a5e",
+        "chatSessionId": "sess_5754f3ed-6eb4-4c2d-a525-393fb4a814ce",
+        "timestamp": 1795431418211
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "reference_date": "2026-11-23",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "currency": "VND",
+  "disclaimer": "Synthetic demonstration fixtures. Shift dates consistently when seeding; never treat these files as a second live database.",
+  "personas": [
+    {
+      "code": "student",
+      "display_name": "Sinh viên",
+      "story": "Sinh viên tự cân đối tiền trọ, tiền ăn, thiết bị học tập.",
+      "balance_snapshot_vnd": 2450000,
+      "balance_snapshot_at": "2026-11-23T09:00:00+07:00",
+      "expected_monthly_income_vnd": 5000000,
+      "payday_day": 5,
+      "expected_daily_expense_vnd": 80000,
+      "projected_monthly_budget_vnd": 2400000,
+      "minimum_reserve_vnd": 300000,
+      "is_demo": true
+    },
+    {
+      "code": "worker",
+      "display_name": "Người mới đi làm",
+      "story": "Lương cố định nhưng có tiền trọ và dự phòng khẩn cấp.",
+      "balance_snapshot_vnd": 6400000,
+      "balance_snapshot_at": "2026-11-23T09:00:00+07:00",
+      "expected_monthly_income_vnd": 12000000,
+      "payday_day": 28,
+      "expected_daily_expense_vnd": 150000,
+      "projected_monthly_budget_vnd": 4500000,
+      "minimum_reserve_vnd": 1000000,
+      "is_demo": true
+    },
+    {
+      "code": "at_risk",
+      "display_name": "Dòng tiền cần chú ý",
+      "story": "Nhiều khoản cố định, có nguy cơ thiếu tiền trước kỳ lương.",
+      "balance_snapshot_vnd": 1700000,
+      "balance_snapshot_at": "2026-11-23T09:00:00+07:00",
+      "expected_monthly_income_vnd": 9000000,
+      "payday_day": 25,
+      "expected_daily_expense_vnd": 220000,
+      "projected_monthly_budget_vnd": 6600000,
+      "minimum_reserve_vnd": 600000,
+      "is_demo": true
+    }
+  ]
+}

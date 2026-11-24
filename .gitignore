@@ -1,0 +1,26 @@
+# Security
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Build/artifacts
+node_modules/
+.next/
+.out/
+coverage/
+.vercel/
+*.log
+# Local temp/exports
+.tmp/
+*.bak
+# Keep intentional Stitch exports tracked if license/size permit;
+# user should manually inspect design/stitch/exports before commit.
+
+# Generated / tooling
+out/
+next-env.d.ts
+*.tsbuildinfo
+playwright-report/
+test-results/
+.DS_Store

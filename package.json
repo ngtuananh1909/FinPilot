@@ -1,0 +1,53 @@
+{
+  "name": "finpilot-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FinPilot AI MVP - personal finance decision copilot",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:fixtures": "python3 tools/validate_pack.py",
+    "test:coverage": "vitest run --coverage --coverage.include=src/lib/finance/** --coverage.reporter=text",
+    "gen:demo-fixtures": "node tools/generate-demo-fixtures.mjs",
+    "check:demo-fixtures": "node tools/generate-demo-fixtures.mjs --check",
+    "seed:demo": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --env-file-if-exists=.env.local --import ./scripts/seed-ts-loader.mjs src/lib/demo/seed-cli.ts",
+    "seed:demo:apply": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --env-file-if-exists=.env.local --import ./scripts/seed-ts-loader.mjs src/lib/demo/seed-cli.ts --apply",
+    "env:check": "node --env-file-if-exists=.env.local scripts/env-presence.mjs",
+    "test:rls": "node --env-file-if-exists=.env.local scripts/run-rls-live.mjs",
+    "ai:probe": "node --experimental-strip-types --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --env-file-if-exists=.env.local --import ./scripts/seed-ts-loader.mjs src/lib/ai/probe-cli.ts",
+    "test:e2e": "playwright test",
+    "security:bundle": "node --env-file-if-exists=.env.local scripts/scan-bundle-secrets.mjs"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.12.7",
+    "@supabase/supabase-js": "2.119.2",
+    "next": "15.5.29",
+    "react": "19.1.10",
+    "react-dom": "19.1.10",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.7",
+    "@playwright/test": "1.65.1",
+    "@types/node": "22.20.5",
+    "@types/react": "19.1.17",
+    "@types/react-dom": "19.1.11",
+    "@vitest/coverage-v8": "5.1.1",
+    "autoprefixer": "10.7.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "15.5.29",
+    "fast-check": "4.11.0",
+    "postcss": "8.5.33",
+    "tailwindcss": "3.4.19",
+    "typescript": "5.9.3",
+    "vitest": "5.1.1"
+  }
+}
