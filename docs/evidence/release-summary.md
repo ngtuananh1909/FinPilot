@@ -1,6 +1,6 @@
-# Release summary (prepared 2026-11-24, NOT released)
+# Release summary (prepared 2026-11-24)
 
-Nothing has been pushed, merged or deployed. The repository has no git remote and no commits. The shared Supabase project `llrxhefrqnjdwlmxozul` has migrations 0001–0003 applied (owner-approved G2) and contains **no user data**.
+Pushed (owner-approved G4): `6c7a8f2` to `origin/main` on GitHub. **Not deployed**: Amplify is not connected yet. The shared Supabase project `llrxhefrqnjdwlmxozul` has migrations 0001–0003 applied (owner-approved G2) and contains **no user data**.
 
 ## Task status
 | Task | Status | Notes |
@@ -23,7 +23,7 @@ Nothing has been pushed, merged or deployed. The repository has no git remote an
 `@playwright/test` 1.65.1 (dev, exact pin) + Chromium headless shell, approved by the owner.
 
 ## Known gaps and risks
-1. **Gemini free tier is not enough for judges**: the free tier allowed 20 requests/day for `gemini-4-hydrogen` on this project (429 observed), and one chat can use up to 4 model calls. Enable billing (Tier 1) before the demo and set a spend cap. Some models (`gemini-3.8-flash`) returned 503 "high demand" repeatedly; `gemini-3.5-flash-lite` was reliable in testing.
+1. **Owner decision: stay on the Gemini free tier and swap in keys from other projects when one is exhausted** (accepted risks: possible terms-of-service issue; each swap needs an Amplify env change + redeploy). Background: **Gemini free tier is not enough for judges**: the free tier allowed 20 requests/day for `gemini-4-hydrogen` on this project (429 observed), and one chat can use up to 4 model calls. Enable billing (Tier 1) before the demo and set a spend cap. Some models (`gemini-3.8-flash`) returned 503 "high demand" repeatedly; `gemini-3.5-flash-lite` was reliable in testing.
 2. Demo account credentials live only in `.tmp/demo-accounts.env` (gitignored). Back it up privately; give it to judges only through the contest channel.
 3. Guest quota can be bypassed by creating new anonymous identities (owner deferred). Mitigation on hosting: Supabase anonymous sign-in rate limit/CAPTCHA.
 4. Receipt save has no server-side idempotency key; a double submit is blocked only in the UI.

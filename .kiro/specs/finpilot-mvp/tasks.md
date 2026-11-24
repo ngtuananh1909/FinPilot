@@ -73,7 +73,8 @@
 - [ ] **T05.3** Configure AWS Amplify secrets/runtime/build **after infrastructure approval**; verify AWS credit, billing alerts and auth redirects.
   - Preparation only (not ticked: infrastructure approval and AWS checks are owner actions): `amplify.yml` (Node 22 via nvm, server env written to `.env.production` without printing), `docs/19-amplify-release-runbook.md` (env names, Supabase redirect URLs, budget alert, smoke test, rollback). No AWS resource created.
 - [ ] **T05.4** Present release plan, expected git push and deployment impact; **STOP for G4 approval**. After approved push to main, verify public app and 3 demo accounts.
-  - STOPPED at G4 (2026-11-24): `docs/evidence/release-summary.md` lists changes, risks, costs, rollback and exact owner commands. No commit, push, PR or deploy performed.
+  - STOPPED at G4 (2026-11-24): `docs/evidence/release-summary.md` lists changes, risks, costs, rollback and exact owner commands.
+  - G4 push 1 (owner-approved 2026-11-24): commit `6c7a8f2` pushed to `origin/main` (git@github.com:ngtuananh1909/FinPilot.git) after path and exact-value secret scans (482 files, 0 hits). Amplify not connected yet, so no deployment. Post-deploy smoke test pending a URL.
 
 ## G2 log
 - 2026-11-23: owner-approved `supabase db push --remote` applied `202611230001_finpilot_initial.sql` (sha256 f0eb34b4...ead23) to project `llrxhefrqnjdwlmxozul`. Owner-approved `supabase db push --remote --yes` applied `202611230002_finpilot_hardening.sql` (sha256 1c2bc21b...4fd01). The hardening file now lives in `supabase/migrations/`; rollback script remains in `supabase/proposed/` (never auto-applied).
@@ -92,6 +93,7 @@
 
 - **Reset (owner decision):** manual reset is allowed for guests AND for the 3 email demo accounts, only by the signed-in owner after explicit confirmation; the route handler derives the user id from the verified session. Reset never touches `ai_usage_daily`.
 - **Guest quota bypass via new anonymous identities:** deferred by owner (no IP limiting for now); revisit before public launch.
+- **AI billing (owner decision 2026-11-24):** no paid tier; when a Gemini free-tier key is exhausted the owner supplies a key from another project/account. Each key change on Amplify needs an env update + redeploy. Agent noted a possible provider terms-of-service risk; owner accepted.
 
 ## Stop conditions
 If any operation requires DB reset, migration, seed/admin creation, deletion, push, PR, merge or deploy, ask for **separate explicit approval**. If AI API credentials not available, finish non-AI tasks and mark AI tests **BLOCKED** rather than pretending PASS. Never mark final Done while live path untested.
